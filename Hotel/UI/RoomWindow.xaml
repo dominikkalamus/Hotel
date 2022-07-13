@@ -1,0 +1,38 @@
+﻿<Window x:Class="Hotel.UI.RoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel.UI"
+        mc:Ignorable="d"
+        Title="Pokoje" Height="500" Width="800" ResizeMode="NoResize" Icon="/UI/hotel.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black"/>
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF1B1B1B" Offset="0.49"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid >
+        <DataGrid x:Name="RoomDataGrid" AutoGenerateColumns="False" Margin="10,10,200,12" SelectionChanged="RoomDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding RoomId}" Header="Id" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RoomNumber}" Header="Nr pokoju" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RoomPrice}" Header="Cena pokoju" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RoomQuatityName}" Header="Jakość pokoju" IsReadOnly="True"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding RoomStatusName}" Header="Status pokoju" IsReadOnly="True"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Nr pokoju:" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Width="176" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="RoomNumberTextBox" HorizontalAlignment="Right" Margin="0,46,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Cena pokoju:" HorizontalAlignment="Right" Margin="0,76,10,0" VerticalAlignment="Top" Width="176" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <TextBox x:Name="RoomPriceTextBox" HorizontalAlignment="Right" Margin="0,107,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Jakość pokoju:" HorizontalAlignment="Right" Margin="0,132,10,0" VerticalAlignment="Top" Width="176" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <ComboBox x:Name="QualityComboBox" HorizontalAlignment="Right" Margin="0,163,10,0" VerticalAlignment="Top" Width="176" FontSize="16"/>
+        <Label Content="Status pokoju:" HorizontalAlignment="Right" Margin="0,190,10,0" VerticalAlignment="Top" Width="176" Foreground="White" FontWeight="Bold" FontSize="16"/>
+        <ComboBox x:Name="StatusComboBox" HorizontalAlignment="Right" Margin="0,221,10,0" VerticalAlignment="Top" Width="176" FontSize="16"/>
+        <Button x:Name="AddButton" Content="Dodaj" HorizontalAlignment="Right" Margin="0,0,10,132" VerticalAlignment="Bottom" Width="176" Height="48" FontSize="20" FontWeight="Bold" Click="AddButton_Click"/>
+        <Button x:Name="UpdateButton" Content="Zaktualizuj" HorizontalAlignment="Right" Margin="0,0,10,72" VerticalAlignment="Bottom" Width="176" Height="48" FontSize="20" FontWeight="Bold" Click="UpdateButton_Click"/>
+        <Button x:Name="DeleteButton" Content="Usuń" HorizontalAlignment="Right" Margin="0,0,10,12" VerticalAlignment="Bottom" Width="176" Height="48" FontSize="20" FontWeight="Bold" Click="DeleteButton_Click"/>
+    </Grid>
+</Window>
